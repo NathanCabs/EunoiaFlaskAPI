@@ -12,7 +12,7 @@ app = Flask(__name__)
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
-
+        #TESTING OF PUSHING
         print("Received request:", request.get_json())
         # Get the request JSON data
         data = request.get_json()
