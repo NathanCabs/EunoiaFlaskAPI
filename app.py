@@ -1,13 +1,14 @@
 from flask import Flask, request, jsonify
 import joblib
 import numpy as np
+from flask_cors import CORS
 
 model = joblib.load('model/eunoia_model_ghq12.pkl')
 scaler = joblib.load('model/eunoia_scaler_ghq12.pkl')
 label_encoder = joblib.load('model/eunoia_label_encoder_ghq12.pkl')
 
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route('/predict', methods=['POST'])
 def predict():
